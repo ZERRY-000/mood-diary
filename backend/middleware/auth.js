@@ -2,10 +2,14 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/User.js";
 
 export const protect = async (req, res, next) => {
-  let token;
-  if (req.headers.authorization?.startsWith("Bearer")) {
-    token = req.headers.authorization.split(" ")[1];
-  }
+  //  const token = req.cookies?.token;
+
+   const token = req.cookies?.token || req.headers.authorization?.split(" ")[1];
+
+  // let token;
+  // if (req.headers.authorization?.startsWith("Bearer")) {
+  //   token = req.headers.authorization.split(" ")[1];
+  // }
   if (!token || token === "null") {
     return res.status(401).json({ success: false, message: "Not authorized" });
   }

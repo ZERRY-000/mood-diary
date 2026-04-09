@@ -9,7 +9,19 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-app.use("/api/v1/users", userRoutes);
+import cookieParser from "cookie-parser";
+app.use(cookieParser());
+
+import cors from "cors";
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:8501"],
+    credentials: true,
+  }),
+);
+
+
+app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/activities", activityRoutes);
 
 app.listen(3000, () =>

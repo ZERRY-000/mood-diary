@@ -29,17 +29,18 @@ export const createActivity = async (req, res) => {
 
 export const getActivities = async (req, res) => {
   try {
-    const { userId } = req.params;
+    const userId = req.user._id;
     
-    // the request user ID has been compared with the params. if they do not match, this function will reject.
-    if(req.user._id.toString() !== userId) {
-      return res.status(403).json({ message: "Forbidden user ID does not match." });
-    }
+    // // the request user ID has been compared with the params. if they do not match, this function will reject.
+    // if(req.user._id.toString() !== userId) {
+    //   return res.status(403).json({ message: "Forbidden user ID does not match." });
+    // }
 
     const activities = await Activity.find({
       userId,
     });
-    res.status(200).json(activities, req.user);
+    // res.status(200).json(activities, req.user); // dev
+    res.status(200).json(activities);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
