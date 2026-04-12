@@ -76,3 +76,16 @@
   user-select: none;
 
 }
+
+.login-to-register {
+  color: var(--color-text-1);
+  cursor: pointer;
+}
+.login-to-register:hover {
+  color: var(--color-text-2);
+  cursor: pointer;
+}
+.login-to-register:active {
+  color: var(--color-text-3);
+  cursor: pointer;
+}

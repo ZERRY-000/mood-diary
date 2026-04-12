@@ -1,33 +1,35 @@
-import { useState } from 'react';
-import useLogin from '../hooks/useLogin.js';
-import { useNavigate } from 'react-router-dom';
+import useRegister from "../hooks/useRegister";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-const Login = () => {
+function Register() {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { handleLogin, error, loading } = useLogin();
   const navigate = useNavigate();
+  const { handleRegister, error, loading } = useRegister();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleLogin(email, password);
-  };
-  
   function handleToRegister() {
-    navigate('/register');
+    navigate('/login');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    handleRegister(username, email, password);
   }
 
   return (
     <div className="login-wrapper">
-      <div className='login-leftside'> 
+      <div className='login-leftside'>
         {/* <h1 className='light login-header-1'>Mood diary</h1> */}
-        <h3 className='light login-header-3'>Login</h3>
+        <h3 className='light login-header-3'>Register</h3>
         <form className="login-form" onSubmit={handleSubmit}>
+          <input value={username} onChange={e => setUsername(e.target.value)} placeholder="username" />
           <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email" />
           <input value={password} onChange={e => setPassword(e.target.value)} placeholder="password" type="password" />
           <button type="submit">Next</button>
-          <div className='login-to-register' onClick={handleToRegister}>Do not have an account? Register Here.</div>
+          <div className='login-to-register' onClick={handleToRegister}>Do you have an account? Login Here.</div>
         </form>
       </div>
       <div className='login-rightside'>
@@ -38,7 +40,6 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default Login;
+  )
+}
+export default Register;
