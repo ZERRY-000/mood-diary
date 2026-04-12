@@ -38,6 +38,7 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email }).select("+password");
+
     if (!user) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
@@ -50,8 +51,10 @@ export const login = async (req, res) => {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
+
+    const userData = { _id: user._id, username: user.username, email: user.email };
     setCookieToken(res, token);
-    res.status(200).json({ success: true, token }); //token for streamlit
+    res.status(200).json({ success: true, token, user: userData }); //token for streamlit
     // res.status(200).json({ token });
   } catch (err) {
     res.status(500).json({ message: err.message });

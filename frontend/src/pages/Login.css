@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   flex: 3;
-  background-color: #fff3e5;
+  background-color: var(--color-bg);
   height: 100vh;
   overflow: hidden;
 }
@@ -65,7 +65,7 @@
 .login-decorate {
   white-space: pre-wrap;
   padding: 16px;
-  color: #d5b692;
+  color: var(--color-primary-3);
   font-size: 200%;
   line-height: 1.4;
   word-break: break-all;

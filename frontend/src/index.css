@@ -86,7 +86,16 @@ h4 {
   --color-primary-1: #d5b692;
   --color-primary-2: #cca68e;
   --color-primary-3: #c6916f;
-  --color-bg: #1a1a1a;
+  --color-text-1: #5f2400;
+  --color-text-2: #d0743c;
+  --color-bg: #fff3e5;
   --color-text: #f0f0f0;
   --color-muted: #888;
+}
+
+.text-color-1 {
+  color: var(--color-text-1);
+}
+.text-color-2 {
+  color: var(--color-text-2);
 }
