@@ -19,9 +19,16 @@ export const login = async (email, password) => {
   return res.json();
 };
 
-export const getMe = async (token) => {
+export const getMe = async () => {
   const res = await fetch(`${BASE_URL}/me`, {
-    headers: { Authorization: `Bearer ${token}` },
+    credentials: "include",
   });
   return res.json();
+};
+
+export const logout = async () => {
+  await fetch(`${BASE_URL}/logout`, {
+    method: "GET",
+    credentials: "include",
+  });
 };

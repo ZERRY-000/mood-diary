@@ -30,6 +30,7 @@
 }
 
 .nav-link {
+  height: 100%;
   display: flex;
   padding: 0px 24px;
   color: var(--color-text-1);
@@ -49,12 +50,13 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  height: 100%;
   gap: 16px;
 }
 
 .navbar-avatar {
   width: 120px;
-  height: 30px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -64,12 +66,13 @@
 }
 
 .navbar-logout {
-  font-size: 12px;
-  color: #888780;
-  padding: 5px 10px;
-  border: 0.5px solid #D3D1C7;
-  border-radius: 8px;
-  background: transparent;
+  height: 100%;
+  font-size: 14px;
+  color: var(--color-text-2);
+  background-color: #f4f4f4;
+  padding: 5px 16px;
+  border: 0;
+  /* background: transparent; */
   cursor: pointer;
   transition: background 0.15s;
 }
