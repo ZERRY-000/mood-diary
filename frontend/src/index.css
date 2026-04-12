@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
+
+:root {
+  font-family: "Anuphan", system-ui, sans-serif;
+  /* line-height: 1.5; */
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 300%;
+}
+
+h2 {
+  font-size: 250%;
+}
+
+h3 {
+  font-size: 200%;
+}
+
+h4 {
+  font-size: 125%;
+}
+.text-xs {
+  font-size: 0.75rem;
+}/* 12px */
+.text-sm {
+  font-size: 0.875rem;
+}/* 14px */
+.text-base {
+  font-size: 1rem;
+}/* 16px */
+.text-lg {
+  font-size: 1.125rem;
+}/* 18px */
+.text-xl {
+  font-size: 1.25rem;
+}/* 20px */
+.text-2xl {
+  font-size: 1.5rem;
+}/* 24px */
+.text-3xl {
+  font-size: 1.875rem;
+}/* 30px */
+.text-4xl {
+  font-size: 2.25rem;
+}/* 36px */
+.thin {
+  font-weight: 100;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+
+/* color palette */
+:root {
+  --color-primary-1: #d5b692;
+  --color-primary-2: #cca68e;
+  --color-primary-3: #c6916f;
+  --color-bg: #1a1a1a;
+  --color-text: #f0f0f0;
+  --color-muted: #888;
+}
