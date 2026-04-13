@@ -13,8 +13,8 @@ const useLogin = () => {
     setLoading(true);
     setError(null);
     const data = await login(email, password);
-    console.log(data);
-    if (data.token) {
+    if (data.user) {
+      console.log(data.user);
       authLogin(data.user, data.token);
       alert('Login OK');
       navigate('/');

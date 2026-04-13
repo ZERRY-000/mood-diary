@@ -24,8 +24,10 @@ export const register = async (req, res) => {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
+    
+    const userData = { _id: user._id, username: user.username, email: user.email };
     setCookieToken(res, token);
-    res.status(201).json({ success: true });
+    res.status(201).json({ success: true, token, user: userData });
     // res.status(201).json({ message: "User registered successfully", userId: user._id, token });
     // res.status(201).json({ token });
   } catch (err) {

@@ -1,0 +1,107 @@
+.my-activity {
+  font-family: "Anuphan", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px;
+}
+
+.my-activity__tags {
+
+  display: flex;
+  gap: 8px;
+}
+
+.my-activity__tags__choice {
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+  border-radius: 100%;
+  background: var(--color-bg);
+}
+
+.my-activity__tags__choice--active {
+  background: var(--color-1);
+}
+
+.my-activity__description {
+  font-family: inherit;
+  font-size: 16px;
+  border: 3px solid var(--color-text-1);
+}
+
+.my-activity__dates {
+  display: flex;
+  gap: 16px;
+}
+.my-activity__date-group {
+  flex: 1;
+}
+.my-activity__date {
+  padding: 16px;
+  height: 32px;
+  width: 400px;
+  border: 3px solid var(--color-primary-1);
+  background-color: var(--color-bg);
+}
+
+.my-activity__duration {
+  padding: 16px;
+  height: 32px;
+  width: 200px;
+  border: 3px solid var(--color-primary-1);
+  background-color: var(--color-bg);
+}
+
+.my-activity__moods {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.my-activity__mood {
+  display: flex;
+  gap: 16px;
+}
+.my-activity__mood__choices {
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 100%;
+  background: var(--color-bg);
+}
+.my-activity__mood__choice--active {
+  background: var(--color-1);
+}
+
+.my-activity__submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  width: 256px;
+  height: 40px;
+  padding: 16px;
+  border: 3px solid var(--color-primary-1);
+  background-color: var(--color-bg);
+  transition: all 0.2s ease;
+}
+
+.my-activity__submit-btn:hover {
+  scale:1.04;
+  background-color: var(--color-4);
+}
+.my-activity__submit-btn:active {
+  scale:1.02;
+  background-color: var(--color-5);
+}

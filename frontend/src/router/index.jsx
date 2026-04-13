@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginPage from "../pages/Login.jsx";
-import HomePage from "../pages/Home.jsx";
+import Login from "../pages/Login.jsx";
+import Home from "../pages/Home.jsx";
 import AppLayout from "./AppLayout.jsx";
 import Register from "../pages/Register.jsx";
-// import DashboardPage from "../pages/dashboard/DashboardPage.jsx";
+import Dashboard from "../pages/Dashboard.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <LoginPage />
+    element: <Login />
   },
   {
     path: "/register",
@@ -19,12 +19,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage />
+        element: <Home />
       },
-      // {
-      //   path: "/dashboard",
-      //   element: <DashboardPage />
-      // }
+      {
+        path: "/dashboard",
+        element: <Dashboard />
+      }
     ]
   }
 ]);

@@ -1,13 +1,13 @@
 import { Activity } from "../models/Activity.js";
 export const createActivity = async (req, res) => {
   try {
-    const { userId, activity, description, start_time, end_time, duration_minutes, mood } =
-      req.body;
+    const userId = req.user._id;
+    const { activity, description, start_time, end_time, duration_minutes, mood } = req.body;
 
     // the request user ID has been compared with the params. if they do not match, this function will reject.
-    if (req.user._id.toString() !== userId) {
-      return res.status(403).json({ message: "Forbidden user ID does not match." });
-    }
+    // if (req.user._id.toString() !== userId) {
+    //   return res.status(403).json({ message: "Forbidden user ID does not match." + req.user._id + " " + userId });
+    // }
 
     const newActivity = await Activity.create({
       userId,
@@ -30,7 +30,7 @@ export const createActivity = async (req, res) => {
 export const getActivities = async (req, res) => {
   try {
     const userId = req.user._id;
-    
+
     // // the request user ID has been compared with the params. if they do not match, this function will reject.
     // if(req.user._id.toString() !== userId) {
     //   return res.status(403).json({ message: "Forbidden user ID does not match." });
@@ -57,7 +57,7 @@ export const updateActivity = async (req, res) => {
     if (activity.userId.toString() !== req.user._id.toString())
       return res.status(403).json({ message: "Forbidden user ID does not match." });
 
-    const updated = await Activity.findByIdAndUpdate(id, req.body, { new: true });
+    const updated = await Activity.findByIdAndUpdate(id, req.body, { returnDocument: "after" });
     res.status(200).json(updated);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -67,13 +67,12 @@ export const updateActivity = async (req, res) => {
 export const deleteActivity = async (req, res) => {
   try {
     const { id } = req.params;
-
-    // the request user ID has been compared with the params. if they do not match, this function will reject.
+    const activity = await Activity.findById(id);
+    if (!activity) return res.status(404).json({ message: "Activity not found." });
     if (activity.userId.toString() !== req.user._id.toString())
       return res.status(403).json({ message: "Forbidden user ID does not match." });
 
-    const deleted = await Activity.findByIdAndDelete(id);
-    if (!deleted) return res.status(404).json({ message: "Activity not found." });
+    await activity.deleteOne();
     res.status(200).json({ message: "Activity has been deleted." });
   } catch (err) {
     res.status(500).json({ message: err.message });
