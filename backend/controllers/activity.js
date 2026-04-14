@@ -20,7 +20,7 @@ export const createActivity = async (req, res) => {
     });
 
     //response for dev
-    res.status(201).json({ id: newActivity._id, message: "Activity has been saved." });
+    res.status(201).json({ success: true, id: newActivity._id, message: "Activity has been saved." });
     // res.status(201).json({ message: "Activity has been saved." });
   } catch (err) {
     res.status(500).json({ message: err.message });

@@ -1,53 +1,37 @@
 import { getActivities, createActivity, updateActivity, deleteActivity } from "../services/activity";
 import "./Dashboard.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RawData from "../components/dashboard/RawData.jsx";
 import MyActivity from "../components/dashboard/MyActivity.jsx";
+import LineGraph from "../components/dashboard/LineGraph.jsx";
 function Dashboard() {
 
-  const data = {
-    activity: "rest",
-    description: "Accidental 2-hour nap",
-    start_time: "2026-04-03T14:00:00Z",
-    end_time: "2026-04-03T16:00:00Z",
-    duration_minutes: 120,
-    mood: { "happy": 3, "sad": 2, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 4 }
-  }
-  const updatedData = {
-    activity: "rest",
-    description: "Accidental 2-hour nap ahhhh",
-    start_time: "2026-04-03T14:00:00Z",
-    end_time: "2026-04-03T16:00:00Z",
-    duration_minutes: 120,
-    mood: { "happy": 4, "sad": 2, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 4 }
-  }
-
-  async function handleCreate(data) {
-    const { activity, description, start_time, end_time, duration_minutes, mood } = data;
-    const res = await createActivity(activity, description, start_time, end_time, duration_minutes, mood);
-    console.log(res);
-  }
-
-  async function handleGet() {
-    const res = await getActivities();
-    console.log(res);
-  }
-  async function handleDelete(id) {
-    const res = await deleteActivity(id);
-    console.log(res);
-  }
-  async function handleUpdate(id, data) {
-    const { activity, description, start_time, end_time, duration_minutes, mood } = data;
-    const res = await updateActivity(id, activity, description, start_time, end_time, duration_minutes, mood);
-    console.log(res);
-  }
+  const [rawData, setRawData] = useState([]);
 
   const [currentPage, setCurrentPage] = useState("RawData")
 
+  const handleDelete = (id) => {
+    setRawData((prev) => prev.filter((r) => r._id !== id));
+  };
+
   const pages = {
-    RawData: <RawData />,
+    RawData: <RawData records={rawData} onDelete={handleDelete} />,
     MyActivity: <MyActivity />,
+    LineGraph: <LineGraph records={rawData} />
   }
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getActivities();
+      console.log(res);
+      const sorted = [...res].sort(
+        (a, b) => new Date(b.start_time) - new Date(a.start_time) 
+      );
+      setRawData(sorted);
+    }
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -59,7 +43,7 @@ function Dashboard() {
           <button className={`text-sm dashboard__nav-btn ${currentPage === "MyActivity" ? "dashboard__nav-btn--active" : ""}`} onClick={() => setCurrentPage("MyActivity")}>
             My New One
           </button>
-          <button className={`text-sm dashboard__nav-btn ${currentPage === "lineGraph" ? "dashboard__nav-btn--active" : ""}`} onClick={() => setCurrentPage("lineGraph")}>
+          <button className={`text-sm dashboard__nav-btn ${currentPage === "LineGraph" ? "dashboard__nav-btn--active" : ""}`} onClick={() => setCurrentPage("LineGraph")}>
             Line Graph
           </button>
         </aside>

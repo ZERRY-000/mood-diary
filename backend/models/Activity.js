@@ -54,7 +54,7 @@ const ActivitySchema = new Schema(
 
 ActivitySchema.pre("save", function (next) {
   if (this.end_time <= this.start_time) {
-    return next(new Error("end_time must be after start_time"));
+    return new Error("end_time must be after start_time");
   }
 });
 

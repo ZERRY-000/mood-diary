@@ -39,6 +39,7 @@ function MyActivity() {
   }
 
   const [errors, setErrors] = useState({})
+  const [success, setSuccess] = useState("")
 
   function validate() {
     const newErrors = {}
@@ -65,6 +66,15 @@ function MyActivity() {
     setErrors({})
     const res = await createActivity(activity, description, startTime, endTime, Number(duration), mood);
     console.log(res)
+    if (res.success) {
+      setSuccess("Activity have been saved.")
+      setActivity("")
+      setDescription("")
+      setStartTime("")
+      setEndTime("")
+      setDuration("")
+      setMood({ happy : 0, sad : 0, angry : 0, fearful : 0, disgusted : 0, surprised : 0 })
+    }
   }
 
   return (
@@ -132,6 +142,7 @@ function MyActivity() {
         {errors.startTime && <p className="text-error regular">{errors.startTime}</p>}
         {errors.endTime && <p className="text-error regular">{errors.endTime}</p>}
         {errors.mood && <p className="text-error regular">{errors.mood}</p>}
+        {success && <p className="text-success regular">{success}</p>}
       </div>
       <div className="my-activity__submit-btn light" onClick={() => handleCreate()}>Put This activity in my Journey</div>
       {/* <div onClick={() => handleLog()}>log</div> */}

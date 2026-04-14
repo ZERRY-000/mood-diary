@@ -1,3 +1,74 @@
 .rawdata {
   padding: 16px;
 }
+
+.rawdata-row {
+  display: flex;
+  gap: 16px;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.rawdata-row>div:nth-child(1) {
+  /* activity */
+  flex: 1;
+}
+
+
+.rawdata-row>div:nth-child(2) {
+  /* description */
+  flex: 3;
+}
+
+
+.rawdata-row>div:nth-child(3) {
+  /* start_time */
+  flex: 2;
+}
+
+
+.rawdata-row>div:nth-child(4) {
+  /* end_time */
+  flex: 2;
+}
+
+
+.rawdata-row>div:nth-child(5) {
+  /* duration */
+  flex: 1;
+}
+.rawdata-row>div:nth-child(6) {
+  /* duration */
+  flex: 1;
+}
+
+.rawdata-row-header {
+  background-color: var(--color-bg);
+  border-bottom: 2px solid #000000;
+}
+.rawdata-detail {
+  padding: 16px;
+  padding-bottom: 32px;
+  background-color: #f3f3f3;
+}
+
+.rawdata-delete {
+  margin-top: 12px;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+
+  cursor: pointer;
+
+  background-color: #ff8d8e;
+  color: #6b0000;
+}
+.rawdata-delete:hover {
+
+  background-color: #ffb5b6;
+  color: #cd0000;
+}
