@@ -4,15 +4,15 @@ import { getMe } from "../../services/auth.js";
 import useAuth from "../../hooks/useAuth.jsx";
 import { createActivity } from "../../services/activity.js";
 
-function MyActivity() {
+function MyActivity({ onActivityCreated }) {
 
-  const {user, setUser} = useAuth();
+  const { user, setUser } = useAuth();
   const [activity, setActivity] = useState("")
   const [description, setDescription] = useState("")
   const [startTime, setStartTime] = useState("")
   const [endTime, setEndTime] = useState("")
   const [duration, setDuration] = useState("")
-  const [mood, setMood] = useState({ happy : 0, sad : 0, angry : 0, fearful : 0, disgusted : 0, surprised : 0 })
+  const [mood, setMood] = useState({ happy: 0, sad: 0, angry: 0, fearful: 0, disgusted: 0, surprised: 0 })
   const activities = ["work", "exercise", "learn", "hobby", "games", "music", "social", "rest", "eating", "other"]
   const mood_tags = ["happy", "sad", "angry", "fearful", "disgusted", "surprised"]
   const mood_score = [1, 2, 3, 4, 5]
@@ -25,7 +25,7 @@ function MyActivity() {
     "Did anything catch you off guard — good or bad?",
   ]
 
-  useEffect( () => {
+  useEffect(() => {
     async function fetchUser() {
       const res = await getMe();
       setUser(res.data);
@@ -52,7 +52,7 @@ function MyActivity() {
       if (mood[key] === 0) {
         newErrors.mood = "Please rate all moods"
         break
-      }    
+      }
     }
     return newErrors
   }
@@ -73,7 +73,8 @@ function MyActivity() {
       setStartTime("")
       setEndTime("")
       setDuration("")
-      setMood({ happy : 0, sad : 0, angry : 0, fearful : 0, disgusted : 0, surprised : 0 })
+      setMood({ happy: 0, sad: 0, angry: 0, fearful: 0, disgusted: 0, surprised: 0 })
+      onActivityCreated?.()
     }
   }
 
@@ -91,37 +92,38 @@ function MyActivity() {
           </div>
         ))}
       </div>
-      
+
       <textarea
         className="my-activity__description"
         name="description"
         placeholder="Description"
+        value={description}
         onChange={(e) => setDescription(e.target.value)}
         rows={4}
       />
-      
+
       <div className="my-activity__dates">
         <div className="my-activity__date-group">
           <h3 className="thin">Start</h3>
-          <input className="my-activity__date" name="start_time" type="datetime-local" onChange={(e) => setStartTime(e.target.value)} />
+          <input className="my-activity__date" name="start_time" type="datetime-local" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
         </div>
         <div className="my-activity__date-group">
           <h3 className="thin">End</h3>
-          <input className="my-activity__date" name="end_time" type="datetime-local" onChange={(e) => setEndTime(e.target.value)} />
+          <input className="my-activity__date" name="end_time" type="datetime-local" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
         </div>
       </div>
 
       <div>
         <h3 className="thin">Duration (minutes)</h3>
-      <input className="my-activity__duration" name="duration_minutes" type="number" placeholder="Duration (min)" onChange={(e) => setDuration(e.target.value)} />
+        <input className="my-activity__duration" name="duration_minutes" type="number" placeholder="Duration (min)" onChange={(e) => setDuration(e.target.value)} />
       </div>
-      
+
       <div className="my-activity__moods">
         {mood_tags.map((tag, index) => (
           <div key={tag}>
             <h4 className="regular">{tag}</h4>
             <p className="light">{mood_desc[index]}</p>
-            <div className="my-activity__mood"> 
+            <div className="my-activity__mood">
               {mood_score.map((score) => (
                 <div
                   key={score}

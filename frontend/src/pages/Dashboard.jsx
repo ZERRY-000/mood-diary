@@ -13,22 +13,23 @@ function Dashboard() {
   const handleDelete = (id) => {
     setRawData((prev) => prev.filter((r) => r._id !== id));
   };
+  
+  const fetchData = async () => {
+    const res = await getActivities();
+    const sorted = [...res].sort(
+      (a, b) => new Date(b.start_time) - new Date(a.start_time)
+    );
+    setRawData(sorted);
+  };
 
   const pages = {
     RawData: <RawData records={rawData} onDelete={handleDelete} />,
-    MyActivity: <MyActivity />,
+    MyActivity: <MyActivity onActivityCreated={fetchData}  />,
     LineGraph: <LineGraph records={rawData} />
   }
 
+
   useEffect(() => {
-    async function fetchData() {
-      const res = await getActivities();
-      console.log(res);
-      const sorted = [...res].sort(
-        (a, b) => new Date(b.start_time) - new Date(a.start_time) 
-      );
-      setRawData(sorted);
-    }
     fetchData();
   }, []);
 
