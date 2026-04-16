@@ -17,7 +17,7 @@ function LineGraph({ records = [] }) {
 
   
   const activities = ["work", "exercise", "learn", "hobby", "games", "music", "social", "rest", "eating", "other"]
-  const [activity, setActivity] = useState("games");
+  const [activity, setActivity] = useState("work");
   
   const filtered = records.filter((r) => r.activity === activity);
   
