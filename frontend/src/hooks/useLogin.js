@@ -16,7 +16,6 @@ const useLogin = () => {
     if (data.user) {
       console.log(data.user);
       authLogin(data.user, data.token);
-      alert('Login OK');
       navigate('/');
     }
   };
