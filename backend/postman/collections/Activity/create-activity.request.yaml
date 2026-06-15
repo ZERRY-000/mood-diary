@@ -1,29 +1,87 @@
 $kind: http-request
-url: http://localhost:3000/api/v1/activities
+name: create-activity
+url: "{{baseURL}}/api/v1/activities"
 method: POST
 body:
   type: json
-  content: "  {\r
+  content: "{\r
 
-    \    \"activity\": \"rest\",\r
+    \  \"userId\": \"69d8611214787c68535b7451\",\r
 
-    \    \"description\": \"Accidental 2-hour nap\",\r
+    \  \"activity\": \"{{randomActivity}}\",\r
 
-    \    \"start_time\": \"2026-04-03T14:00:00Z\",\r
+    \  \"description\": \"{{activityDescription}}\",\r
 
-    \    \"end_time\": \"2026-04-03T16:00:00Z\",\r
+    \  \"start_time\": \"{{activityStartTime}}\",\r
 
-    \    \"duration_minutes\": 120,\r
+    \  \"end_time\": \"{{activityEndTime}}\",\r
 
-    \    \"mood\": { \"happy\": 3, \"sad\": 2, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
+    \  \"duration_minutes\": {{activityDuration}},\r
 
-    \  }\r\n"
+    \  \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 2, \"disgusted\": 2, \"surprised\": 1 }\r
+
+    }"
 auth:
   type: noauth
 scripts:
   - type: afterResponse
     code: "const res = pm.response.json();\r
 
-      pm.environment.set(\"recent-activity-id\", res.id);\r\n"
+      pm.environment.set(\"recentActivityId\", res.id);\r\n"
     language: text/javascript
-order: 2000
+  - type: beforeRequest
+    code: "function randomActivity() {\r
+
+      \  const activity = [\r
+
+      \    \"work\", \r
+
+      \    \"exercise\", \r
+
+      \    \"learn\", \r
+
+      \    \"hobby\", \r
+
+      \    \"games\", \r
+
+      \    \"music\", \r
+
+      \    \"social\", \r
+
+      \    \"rest\",\r
+
+      \    \"eating\",\r
+
+      \    \"other\", \r
+
+      \  ]\r
+
+      \  return activity[Math.floor(Math.random() * activity.length)]\r
+
+      }\r
+
+      \r
+
+      const duration = 45;\r
+
+      const duration_ms = 45 * 60 * 1000;\r
+
+      const now = new Date();\r
+
+      const activityEndTime = new Date(now.getTime());\r
+
+      const activityStartTime = new Date(now.getTime() - duration_ms);\r
+
+      const activityDescription = pm.variables.replaceIn(\"{{$randomLoremSentence}}\")\r
+
+      pm.environment.set(\"randomActivity\", randomActivity())\r
+
+      pm.environment.set(\"activityDescription\", activityDescription)\r
+
+      pm.environment.set(\"activityDuration\", duration);\r
+
+      pm.environment.set(\"activityEndTime\", activityEndTime);\r
+
+      pm.environment.set(\"activityStartTime\", activityStartTime);\r\n"
+    language: text/javascript
+order: 3000

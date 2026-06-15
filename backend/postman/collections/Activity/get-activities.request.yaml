@@ -1,5 +1,6 @@
 $kind: http-request
-url: http://localhost:3000/api/v1/activities/me
+name: get-activities
+url: "{{baseURL}}/api/v1/activities/me"
 method: GET
 auth:
   type: noauth

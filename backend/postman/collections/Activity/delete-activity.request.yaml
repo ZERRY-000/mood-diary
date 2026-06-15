@@ -1,5 +1,6 @@
 $kind: http-request
-url: http://localhost:3000/api/v1/activities/{{recent-activity-id}}
+name: delete-activity
+url: "{{baseURL}}/api/v1/activities/{{recentActivityId}}"
 method: DELETE
 auth:
   type: bearer
