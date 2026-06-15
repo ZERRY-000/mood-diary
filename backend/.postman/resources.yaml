@@ -1,0 +1,8 @@
+workspace:
+  id: a344ab1d-7797-4762-93b9-46fde8851e8c
+cloudResources:
+  collections:
+    ../postman/collections/Activity: 46650689-38deab75-9fe7-47d7-a810-3a5e2c2d1b0b
+    ../postman/collections/User: 46650689-87995eaa-1e02-4dda-ac70-23cb8a99fc5f
+  environments:
+    ../postman/environments/ENV.environment.yaml: 46650689-36632d64-caba-4d05-bb27-40b1dabdc3c8

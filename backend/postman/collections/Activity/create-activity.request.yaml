@@ -1,0 +1,29 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/activities
+method: POST
+body:
+  type: json
+  content: "  {\r
+
+    \    \"activity\": \"rest\",\r
+
+    \    \"description\": \"Accidental 2-hour nap\",\r
+
+    \    \"start_time\": \"2026-04-03T14:00:00Z\",\r
+
+    \    \"end_time\": \"2026-04-03T16:00:00Z\",\r
+
+    \    \"duration_minutes\": 120,\r
+
+    \    \"mood\": { \"happy\": 3, \"sad\": 2, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
+
+    \  }\r\n"
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: "const res = pm.response.json();\r
+
+      pm.environment.set(\"recent-activity-id\", res.id);\r\n"
+    language: text/javascript
+order: 2000

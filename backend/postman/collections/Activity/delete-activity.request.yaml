@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/activities/{{recent-activity-id}}
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 5000

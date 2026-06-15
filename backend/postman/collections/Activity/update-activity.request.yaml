@@ -1,0 +1,25 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/activities/{{recent-activity-id}}
+method: PUT
+body:
+  type: json
+  content: "  {\r
+
+    \    \"activity\": \"Napping\",\r
+
+    \    \"description\": \"Accidental 2-hour nap\",\r
+
+    \    \"start_time\": \"2026-04-03T14:00:00Z\",\r
+
+    \    \"end_time\": \"2026-04-03T16:00:00Z\",\r
+
+    \    \"duration_minutes\": 120,\r
+
+    \    \"mood\": { \"happy\": 4, \"sad\": 2, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
+
+    \  }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000
