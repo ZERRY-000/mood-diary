@@ -27,7 +27,8 @@ scripts:
 
       \    \"duration_minutes\": 60,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 2 }\r
 
       \  },\r
 
@@ -45,7 +46,8 @@ scripts:
 
       \    \"duration_minutes\": 60,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -63,7 +65,8 @@ scripts:
 
       \    \"duration_minutes\": 150,\r
 
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
+      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 2 }\r
 
       \  },\r
 
@@ -81,7 +84,8 @@ scripts:
 
       \    \"duration_minutes\": 90,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 3 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 3 }\r
 
       \  },\r
 
@@ -99,7 +103,8 @@ scripts:
 
       \    \"duration_minutes\": 120,\r
 
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 2, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
+      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 2, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 4 }\r
 
       \  },\r
 
@@ -117,7 +122,8 @@ scripts:
 
       \    \"duration_minutes\": 60,\r
 
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -135,7 +141,8 @@ scripts:
 
       \    \"duration_minutes\": 90,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -153,7 +160,8 @@ scripts:
 
       \    \"duration_minutes\": 120,\r
 
-      \    \"mood\": { \"happy\": 2, \"sad\": 1, \"angry\": 2, \"fearful\": 1, \"disgusted\": 2, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 2, \"sad\": 1, \"angry\": 2, \"fearful\": 1,
+      \"disgusted\": 2, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -171,7 +179,8 @@ scripts:
 
       \    \"duration_minutes\": 120,\r
 
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 2, \"disgusted\": 1, \"surprised\": 3 }\r
+      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 2,
+      \"disgusted\": 1, \"surprised\": 3 }\r
 
       \  },\r
 
@@ -181,7 +190,8 @@ scripts:
 
       \    \"activity\": \"music\",\r
 
-      \    \"description\": \"Listened to new album releases while chilling.\",\r
+      \    \"description\": \"Listened to new album releases while
+      chilling.\",\r
 
       \    \"start_time\": \"2026-04-05T17:00:00.000Z\",\r
 
@@ -189,7 +199,8 @@ scripts:
 
       \    \"duration_minutes\": 60,\r
 
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
+      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 4 }\r
 
       \  },\r
 
@@ -199,7 +210,8 @@ scripts:
 
       \    \"activity\": \"social\",\r
 
-      \    \"description\": \"Family dinner; slightly stressful but good food.\",\r
+      \    \"description\": \"Family dinner; slightly stressful but good
+      food.\",\r
 
       \    \"start_time\": \"2026-04-05T19:00:00.000Z\",\r
 
@@ -207,7 +219,8 @@ scripts:
 
       \    \"duration_minutes\": 120,\r
 
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 3, \"fearful\": 2, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 3, \"fearful\": 2,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -225,7 +238,8 @@ scripts:
 
       \    \"duration_minutes\": 60,\r
 
-      \    \"mood\": { \"happy\": 2, \"sad\": 2, \"angry\": 1, \"fearful\": 2, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 2, \"sad\": 2, \"angry\": 1, \"fearful\": 2,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -243,7 +257,8 @@ scripts:
 
       \    \"duration_minutes\": 90,\r
 
-      \    \"mood\": { \"happy\": 2, \"sad\": 1, \"angry\": 1, \"fearful\": 4, \"disgusted\": 1, \"surprised\": 2 }\r
+      \    \"mood\": { \"happy\": 2, \"sad\": 1, \"angry\": 1, \"fearful\": 4,
+      \"disgusted\": 1, \"surprised\": 2 }\r
 
       \  },\r
 
@@ -253,7 +268,8 @@ scripts:
 
       \    \"activity\": \"work\",\r
 
-      \    \"description\": \"Feature development - implementing the new API.\",\r
+      \    \"description\": \"Feature development - implementing the new
+      API.\",\r
 
       \    \"start_time\": \"2026-04-06T10:30:00.000Z\",\r
 
@@ -261,7 +277,8 @@ scripts:
 
       \    \"duration_minutes\": 120,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -279,7 +296,8 @@ scripts:
 
       \    \"duration_minutes\": 30,\r
 
-      \    \"mood\": { \"happy\": 1, \"sad\": 2, \"angry\": 3, \"fearful\": 1, \"disgusted\": 2, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 1, \"sad\": 2, \"angry\": 3, \"fearful\": 1,
+      \"disgusted\": 2, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -297,7 +315,8 @@ scripts:
 
       \    \"duration_minutes\": 240,\r
 
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -315,7 +334,8 @@ scripts:
 
       \    \"duration_minutes\": 60,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 2 }\r
 
       \  },\r
 
@@ -333,7 +353,8 @@ scripts:
 
       \    \"duration_minutes\": 120,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 3 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 3 }\r
 
       \  },\r
 
@@ -351,7 +372,8 @@ scripts:
 
       \    \"duration_minutes\": 75,\r
 
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -361,7 +383,8 @@ scripts:
 
       \    \"activity\": \"work\",\r
 
-      \    \"description\": \"Code review and collaboration with the frontend team.\",\r
+      \    \"description\": \"Code review and collaboration with the frontend
+      team.\",\r
 
       \    \"start_time\": \"2026-04-07T09:30:00.000Z\",\r
 
@@ -369,7 +392,8 @@ scripts:
 
       \    \"duration_minutes\": 150,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 2 }\r
 
       \  },\r
 
@@ -387,7 +411,8 @@ scripts:
 
       \    \"duration_minutes\": 90,\r
 
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 3 }\r
+      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 3 }\r
 
       \  },\r
 
@@ -397,7 +422,8 @@ scripts:
 
       \    \"activity\": \"work\",\r
 
-      \    \"description\": \"Solving a production bug related to timezones.\",\r
+      \    \"description\": \"Solving a production bug related to
+      timezones.\",\r
 
       \    \"start_time\": \"2026-04-07T14:00:00.000Z\",\r
 
@@ -405,7 +431,8 @@ scripts:
 
       \    \"duration_minutes\": 210,\r
 
-      \    \"mood\": { \"happy\": 3, \"sad\": 2, \"angry\": 4, \"fearful\": 3, \"disgusted\": 2, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 3, \"sad\": 2, \"angry\": 4, \"fearful\": 3,
+      \"disgusted\": 2, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -423,7 +450,8 @@ scripts:
 
       \    \"duration_minutes\": 75,\r
 
-      \    \"mood\": { \"happy\": 1, \"sad\": 2, \"angry\": 5, \"fearful\": 4, \"disgusted\": 3, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 1, \"sad\": 2, \"angry\": 5, \"fearful\": 4,
+      \"disgusted\": 3, \"surprised\": 1 }\r
 
       \  },\r
 
@@ -441,7 +469,8 @@ scripts:
 
       \    \"duration_minutes\": 90,\r
 
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
+      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1,
+      \"disgusted\": 1, \"surprised\": 1 }\r
 
       \  }\r
 
@@ -476,4 +505,4 @@ scripts:
 
       }"
     language: text/javascript
-order: 6000
+order: 7000
