@@ -6,8 +6,6 @@ body:
   type: json
   content: "{\r
 
-    \  \"userId\": \"69d8611214787c68535b7451\",\r
-
     \  \"activity\": \"{{randomActivity}}\",\r
 
     \  \"description\": \"{{activityDescription}}\",\r
