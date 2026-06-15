@@ -1,6 +1,6 @@
 # Mood Diary
 
-Mood Diary is a full-stack web app that lets you log daily activities and rate your emotional response to each one (happy, surprised, angry, annoyed, and more). Your mood scores are then plotted on an interactive line graph so you can spot patterns over time.
+Mood Diary is a full-stack web app that lets you log daily activities and rate your emotional response to each one (happy, surprised, angry, annoyed, disgusted and sad). Your mood scores are then plotted on an interactive line graph so you can spot patterns over time.
 
 ---
 
