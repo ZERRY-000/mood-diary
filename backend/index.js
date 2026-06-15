@@ -1,8 +1,8 @@
+import "dotenv/config";
 import express from "express";
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/user.js";
 import activityRoutes from "./routes/activity.js"
-import "dotenv/config";
 
 connectDB();
 
