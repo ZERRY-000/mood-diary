@@ -3,5 +3,7 @@ name: get-activities
 url: "{{baseURL}}/api/v1/activities/me"
 method: GET
 auth:
-  type: noauth
+  type: bearer
+  credentials:
+    token: "{{token}}"
 order: 1000

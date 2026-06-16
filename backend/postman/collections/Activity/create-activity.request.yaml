@@ -20,7 +20,9 @@ body:
 
     }"
 auth:
-  type: noauth
+  type: bearer
+  credentials:
+    token: "{{token}}"
 scripts:
   - type: afterResponse
     code: "const res = pm.response.json();\r
@@ -82,4 +84,4 @@ scripts:
 
       pm.environment.set(\"activityStartTime\", activityStartTime);\r\n"
     language: text/javascript
-order: 3000
+order: 2000

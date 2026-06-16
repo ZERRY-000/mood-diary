@@ -1,9 +1,8 @@
 $kind: http-request
-name: delete-activity
 url: "{{baseURL}}/api/v1/activities/{{recentActivityId}}"
 method: DELETE
 auth:
   type: bearer
   credentials:
     token: "{{token}}"
-order: 6000
+order: 4000

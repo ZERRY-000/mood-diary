@@ -18,12 +18,20 @@ scripts:
 
       \r
 
-      pm.test(\"Status code is 200\", function () {\r
+      pm.test(\"Response body is valid\", function () {\r
 
-      \    pm.response.to.have.status(200);\r
+      \    var jsonData = pm.response.json();\r
+
+      \    console.log(pm.response)\r
+
+      \    pm.expect(jsonData.success).to.equal(true);\r
+
+      \    pm.expect(jsonData).to.have.property(\"token\");\r
+
+      \r
 
       });\r
 
       pm.execution.setNextRequest(\"get-me\");"
     language: text/javascript
-order: 2000
+order: 2869

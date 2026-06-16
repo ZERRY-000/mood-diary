@@ -1,5 +1,4 @@
 $kind: collection
-name: Activity
 scripts:
   - type: http:afterResponse
     code: "pm.test(\"Successful request\", function () {\r
@@ -23,3 +22,4 @@ scripts:
       \    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;\r
 
       });"
+    language: text/javascript

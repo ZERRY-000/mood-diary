@@ -20,5 +20,7 @@ body:
 
     \  }"
 auth:
-  type: noauth
-order: 4000
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3000
