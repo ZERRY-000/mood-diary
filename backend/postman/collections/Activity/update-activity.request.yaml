@@ -23,4 +23,18 @@ auth:
   type: bearer
   credentials:
     token: "{{token}}"
+scripts:
+  - type: beforeRequest
+    code: // console.log(pm.info.requestId)
+    language: text/javascript
+  - type: afterResponse
+    code: pm.execution.setNextRequest("eBE27e888f4Abb19aDE261F8")
+    language: text/javascript
+    requests:
+      eBE27e888f4Abb19aDE261F8:
+        workspace: a344ab1d-7797-4762-93b9-46fde8851e8c
+        collection: eFF5b0E36fBbA38F821E8c0F
+        location:
+          - Activity
+          - delete-activity
 order: 3000

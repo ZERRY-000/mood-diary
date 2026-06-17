@@ -1,8 +1,13 @@
 $kind: http-request
+name: delete-activity
 url: "{{baseURL}}/api/v1/activities/{{recentActivityId}}"
 method: DELETE
 auth:
   type: bearer
   credentials:
     token: "{{token}}"
+scripts:
+  - type: afterResponse
+    code: pm.execution.setNextRequest(null)
+    language: text/javascript
 order: 4000

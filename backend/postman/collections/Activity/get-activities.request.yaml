@@ -6,4 +6,15 @@ auth:
   type: bearer
   credentials:
     token: "{{token}}"
+scripts:
+  - type: afterResponse
+    code: pm.execution.setNextRequest("4E72697befB278dDC3BfbA06");
+    language: text/javascript
+    requests:
+      4E72697befB278dDC3BfbA06:
+        workspace: a344ab1d-7797-4762-93b9-46fde8851e8c
+        collection: eFF5b0E36fBbA38F821E8c0F
+        location:
+          - Activity
+          - create-activity
 order: 1000

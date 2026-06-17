@@ -27,8 +27,19 @@ scripts:
   - type: afterResponse
     code: "const res = pm.response.json();\r
 
-      pm.environment.set(\"recentActivityId\", res.id);\r\n"
+      pm.environment.set(\"recentActivityId\", res.id);\r
+
+      \r
+
+      pm.execution.setNextRequest(\"08ece06CEBd536ABac1Aa6E0\")\r\n"
     language: text/javascript
+    requests:
+      08ece06CEBd536ABac1Aa6E0:
+        workspace: a344ab1d-7797-4762-93b9-46fde8851e8c
+        collection: eFF5b0E36fBbA38F821E8c0F
+        location:
+          - Activity
+          - update-activity
   - type: beforeRequest
     code: "function randomActivity() {\r
 
@@ -82,6 +93,10 @@ scripts:
 
       pm.environment.set(\"activityEndTime\", activityEndTime);\r
 
-      pm.environment.set(\"activityStartTime\", activityStartTime);\r\n"
+      pm.environment.set(\"activityStartTime\", activityStartTime);\r
+
+      \r
+
+      // console.log(pm.info.requestId)\r\n"
     language: text/javascript
 order: 2000
