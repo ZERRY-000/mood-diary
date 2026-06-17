@@ -8,7 +8,8 @@ auth:
     token: "{{token}}"
 scripts:
   - type: afterResponse
-    code: pm.execution.setNextRequest("4E72697befB278dDC3BfbA06");
+    code: |
+      pm.execution.setNextRequest("4E72697befB278dDC3BfbA06");
     language: text/javascript
     requests:
       4E72697befB278dDC3BfbA06:

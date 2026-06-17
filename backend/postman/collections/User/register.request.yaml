@@ -3,48 +3,33 @@ url: "{{baseURL}}/api/v1/auth/register"
 method: POST
 body:
   type: json
-  content: "{\r
-
-    \    \"username\": \"{{testName}}\",\r
-
-    \    \"email\": \"{{testName}}@gmail.com\",\r
-
-    \    \"password\": \"000000\"\r
-
-    }\r
-
-    // // email already in use\r
-
-    // {\r
-
-    //     \"username\": \"May\",\r
-
-    //     \"email\": \"may@gmail.com\",\r
-
-    //     \"password\": \"000000\"\r
-
-    // }"
+  content: |
+    {
+      "username": "{{testName}}",
+      "email": "{{testName}}@gmail.com",
+      "password": "000000"
+    }
+    // // email already in use
+    // {
+    //     "username": "May",
+    //     "email": "may@gmail.com",
+    //     "password": "000000"
+    // }
 scripts:
   - type: beforeRequest
-    code: "const testName = pm.variables.replaceIn('{{$randomFirstName}}')\r
-
-      pm.environment.set(\"testName\", testName);"
+    code: |
+      const testName = pm.variables.replaceIn('{{$randomFirstName}}')
+      pm.environment.set("testName", testName);
     language: text/javascript
   - type: afterResponse
-    code: "const res = pm.response.json();\r
+    code: |
+      const res = pm.response.json();
 
-      \r
+      pm.test("Status code is 201", function () {
+        pm.response.to.have.status(201);
+      });
 
-      pm.test(\"Status code is 201\", function () {\r
-
-      \    pm.response.to.have.status(201);\r
-
-      });\r
-
-      \r
-
-      pm.environment.set(\"token\", res.token);\r
-
-      pm.execution.setNextRequest(\"login\");"
+      pm.environment.set("token", res.token);
+      pm.execution.setNextRequest("login");
     language: text/javascript
 order: 2000

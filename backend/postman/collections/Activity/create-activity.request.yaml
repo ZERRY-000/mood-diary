@@ -4,34 +4,26 @@ url: "{{baseURL}}/api/v1/activities"
 method: POST
 body:
   type: json
-  content: "{\r
-
-    \  \"activity\": \"{{randomActivity}}\",\r
-
-    \  \"description\": \"{{activityDescription}}\",\r
-
-    \  \"start_time\": \"{{activityStartTime}}\",\r
-
-    \  \"end_time\": \"{{activityEndTime}}\",\r
-
-    \  \"duration_minutes\": {{activityDuration}},\r
-
-    \  \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 2, \"disgusted\": 2, \"surprised\": 1 }\r
-
-    }"
+  content: |
+    {
+      "activity": "{{randomActivity}}",
+      "description": "{{activityDescription}}",
+      "start_time": "{{activityStartTime}}",
+      "end_time": "{{activityEndTime}}",
+      "duration_minutes": {{activityDuration}},
+      "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 2, "disgusted": 2, "surprised": 1 }
+    }
 auth:
   type: bearer
   credentials:
     token: "{{token}}"
 scripts:
   - type: afterResponse
-    code: "const res = pm.response.json();\r
+    code: |
+      const res = pm.response.json();
+      pm.environment.set("recentActivityId", res.id);
 
-      pm.environment.set(\"recentActivityId\", res.id);\r
-
-      \r
-
-      pm.execution.setNextRequest(\"08ece06CEBd536ABac1Aa6E0\")\r\n"
+      pm.execution.setNextRequest("08ece06CEBd536ABac1Aa6E0")
     language: text/javascript
     requests:
       08ece06CEBd536ABac1Aa6E0:
@@ -41,62 +33,35 @@ scripts:
           - Activity
           - update-activity
   - type: beforeRequest
-    code: "function randomActivity() {\r
+    code: |
+      function randomActivity() {
+        const activity = [
+          "work", 
+          "exercise", 
+          "learn", 
+          "hobby", 
+          "games", 
+          "music", 
+          "social", 
+          "rest",
+          "eating",
+          "other", 
+        ]
+        return activity[Math.floor(Math.random() * activity.length)]
+      }
 
-      \  const activity = [\r
+      const duration = 45;
+      const duration_ms = 45 * 60 * 1000;
+      const now = new Date();
+      const activityEndTime = new Date(now.getTime());
+      const activityStartTime = new Date(now.getTime() - duration_ms);
+      const activityDescription = pm.variables.replaceIn("{{$randomLoremSentence}}")
+      pm.environment.set("randomActivity", randomActivity())
+      pm.environment.set("activityDescription", activityDescription)
+      pm.environment.set("activityDuration", duration);
+      pm.environment.set("activityEndTime", activityEndTime);
+      pm.environment.set("activityStartTime", activityStartTime);
 
-      \    \"work\", \r
-
-      \    \"exercise\", \r
-
-      \    \"learn\", \r
-
-      \    \"hobby\", \r
-
-      \    \"games\", \r
-
-      \    \"music\", \r
-
-      \    \"social\", \r
-
-      \    \"rest\",\r
-
-      \    \"eating\",\r
-
-      \    \"other\", \r
-
-      \  ]\r
-
-      \  return activity[Math.floor(Math.random() * activity.length)]\r
-
-      }\r
-
-      \r
-
-      const duration = 45;\r
-
-      const duration_ms = 45 * 60 * 1000;\r
-
-      const now = new Date();\r
-
-      const activityEndTime = new Date(now.getTime());\r
-
-      const activityStartTime = new Date(now.getTime() - duration_ms);\r
-
-      const activityDescription = pm.variables.replaceIn(\"{{$randomLoremSentence}}\")\r
-
-      pm.environment.set(\"randomActivity\", randomActivity())\r
-
-      pm.environment.set(\"activityDescription\", activityDescription)\r
-
-      pm.environment.set(\"activityDuration\", duration);\r
-
-      pm.environment.set(\"activityEndTime\", activityEndTime);\r
-
-      pm.environment.set(\"activityStartTime\", activityStartTime);\r
-
-      \r
-
-      // console.log(pm.info.requestId)\r\n"
+      // console.log(pm.info.requestId)
     language: text/javascript
 order: 2000

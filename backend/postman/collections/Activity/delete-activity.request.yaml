@@ -1,5 +1,6 @@
-$kind: http-request
 name: delete-activity
+$kind: http-request
+description: Delete activity code from scratch 
 url: "{{baseURL}}/api/v1/activities/{{recentActivityId}}"
 method: DELETE
 auth:
@@ -8,6 +9,13 @@ auth:
     token: "{{token}}"
 scripts:
   - type: afterResponse
-    code: pm.execution.setNextRequest(null)
+    code: |
+      pm.execution.setNextRequest(null) 
+      console.log("hello world")
     language: text/javascript
-order: 4000
+  - type: beforeRequest
+    code: |
+      pm.execution.setNextRequest(null) 
+      console.log("hello world")
+    language: text/javascript
+order: 6000

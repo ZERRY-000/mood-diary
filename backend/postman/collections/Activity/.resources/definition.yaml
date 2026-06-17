@@ -1,25 +1,16 @@
 $kind: collection
 scripts:
   - type: http:afterResponse
-    code: "pm.test(\"Successful request\", function () {\r
+    code: |
+      pm.test("Successful request", function () {
+      pm.expect(pm.response.code).to.be.oneOf([200, 201]);
+      });
 
-      \    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r
+      pm.test("Response time is less than 2000ms", function () {
+          pm.expect(pm.response.responseTime).to.be.below(2000);
+      });
 
-      });\r
-
-      \r
-
-      pm.test(\"Response time is less than 2000ms\", function () {\r
-
-      \    pm.expect(pm.response.responseTime).to.be.below(2000);\r
-
-      });\r
-
-      \r
-
-      pm.test(\"Content-Type is present\", function () {\r
-
-      \    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;\r
-
-      });"
+      pm.test("Content-Type is present", function () {
+          pm.expect(pm.response.headers.has("Content-Type")).to.be.true;
+      });
     language: text/javascript

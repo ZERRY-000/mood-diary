@@ -10,469 +10,241 @@ auth:
     token: "{{token}}"
 scripts:
   - type: beforeRequest
-    code: "const data = [\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"exercise\",\r
-
-      \    \"description\": \"Saturday morning yoga session.\",\r
-
-      \    \"start_time\": \"2026-04-04T07:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-04T08:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 60,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"eating\",\r
-
-      \    \"description\": \"Brunch at a quiet local cafe.\",\r
-
-      \    \"start_time\": \"2026-04-04T10:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-04T11:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 60,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"hobby\",\r
-
-      \    \"description\": \"Watercolor painting in the park.\",\r
-
-      \    \"start_time\": \"2026-04-04T14:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-04T16:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 150,\r
-
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"social\",\r
-
-      \    \"description\": \"Met friends for a late afternoon coffee.\",\r
-
-      \    \"start_time\": \"2026-04-04T17:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-04T18:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 90,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 3 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"games\",\r
-
-      \    \"description\": \"Online multiplayer session with the squad.\",\r
-
-      \    \"start_time\": \"2026-04-04T20:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-04T22:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 120,\r
-
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 2, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"rest\",\r
-
-      \    \"description\": \"Wind down and light reading before bed.\",\r
-
-      \    \"start_time\": \"2026-04-04T22:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-04T23:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 60,\r
-
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"rest\",\r
-
-      \    \"description\": \"Sunday morning lie-in and relaxation.\",\r
-
-      \    \"start_time\": \"2026-04-05T09:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-05T10:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 90,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"other\",\r
-
-      \    \"description\": \"Weekly grocery shopping and meal prep.\",\r
-
-      \    \"start_time\": \"2026-04-05T11:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-05T13:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 120,\r
-
-      \    \"mood\": { \"happy\": 2, \"sad\": 1, \"angry\": 2, \"fearful\": 1, \"disgusted\": 2, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"learn\",\r
-
-      \    \"description\": \"Studied advanced Mongoose schema patterns.\",\r
-
-      \    \"start_time\": \"2026-04-05T14:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-05T16:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 120,\r
-
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 2, \"disgusted\": 1, \"surprised\": 3 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"music\",\r
-
-      \    \"description\": \"Listened to new album releases while chilling.\",\r
-
-      \    \"start_time\": \"2026-04-05T17:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-05T18:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 60,\r
-
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 4 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"social\",\r
-
-      \    \"description\": \"Family dinner; slightly stressful but good food.\",\r
-
-      \    \"start_time\": \"2026-04-05T19:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-05T21:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 120,\r
-
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 3, \"fearful\": 2, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"rest\",\r
-
-      \    \"description\": \"Early night to prepare for the work week.\",\r
-
-      \    \"start_time\": \"2026-04-05T22:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-05T23:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 60,\r
-
-      \    \"mood\": { \"happy\": 2, \"sad\": 2, \"angry\": 1, \"fearful\": 2, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"work\",\r
-
-      \    \"description\": \"Monday morning standup and ticket grooming.\",\r
-
-      \    \"start_time\": \"2026-04-06T09:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-06T10:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 90,\r
-
-      \    \"mood\": { \"happy\": 2, \"sad\": 1, \"angry\": 1, \"fearful\": 4, \"disgusted\": 1, \"surprised\": 2 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"work\",\r
-
-      \    \"description\": \"Feature development - implementing the new API.\",\r
-
-      \    \"start_time\": \"2026-04-06T10:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-06T12:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 120,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"eating\",\r
-
-      \    \"description\": \"Quick lunch at the desk while debugging.\",\r
-
-      \    \"start_time\": \"2026-04-06T12:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-06T13:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 30,\r
-
-      \    \"mood\": { \"happy\": 1, \"sad\": 2, \"angry\": 3, \"fearful\": 1, \"disgusted\": 2, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"work\",\r
-
-      \    \"description\": \"Deep work session on the data pipeline.\",\r
-
-      \    \"start_time\": \"2026-04-06T13:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-06T17:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 240,\r
-
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"exercise\",\r
-
-      \    \"description\": \"Evening run to decompress from Monday stress.\",\r
-
-      \    \"start_time\": \"2026-04-06T18:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-06T19:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 60,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"rest\",\r
-
-      \    \"description\": \"Watching a documentary on Netflix.\",\r
-
-      \    \"start_time\": \"2026-04-06T20:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-06T22:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 120,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 3 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"exercise\",\r
-
-      \    \"description\": \"Morning gym session - Leg Day.\",\r
-
-      \    \"start_time\": \"2026-04-07T06:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-07T07:45:00.000Z\",\r
-
-      \    \"duration_minutes\": 75,\r
-
-      \    \"mood\": { \"happy\": 3, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"work\",\r
-
-      \    \"description\": \"Code review and collaboration with the frontend team.\",\r
-
-      \    \"start_time\": \"2026-04-07T09:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-07T12:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 150,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"eating\",\r
-
-      \    \"description\": \"Team lunch out at a Japanese restaurant.\",\r
-
-      \    \"start_time\": \"2026-04-07T12:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-07T13:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 90,\r
-
-      \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 3 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"work\",\r
-
-      \    \"description\": \"Solving a production bug related to timezones.\",\r
-
-      \    \"start_time\": \"2026-04-07T14:00:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-07T17:30:00.000Z\",\r
-
-      \    \"duration_minutes\": 210,\r
-
-      \    \"mood\": { \"happy\": 3, \"sad\": 2, \"angry\": 4, \"fearful\": 3, \"disgusted\": 2, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"other\",\r
-
-      \    \"description\": \"Driving home through heavy rain and traffic.\",\r
-
-      \    \"start_time\": \"2026-04-07T17:45:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-07T19:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 75,\r
-
-      \    \"mood\": { \"happy\": 1, \"sad\": 2, \"angry\": 5, \"fearful\": 4, \"disgusted\": 3, \"surprised\": 1 }\r
-
-      \  },\r
-
-      \  {\r
-
-      \    \"userId\": \"69d61e0a3cb0624fbdd34b2f\",\r
-
-      \    \"activity\": \"games\",\r
-
-      \    \"description\": \"Chill session of a cozy simulation game.\",\r
-
-      \    \"start_time\": \"2026-04-07T20:30:00.000Z\",\r
-
-      \    \"end_time\": \"2026-04-07T22:00:00.000Z\",\r
-
-      \    \"duration_minutes\": 90,\r
-
-      \    \"mood\": { \"happy\": 4, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 1 }\r
-
-      \  }\r
-
-      ]\r
-
-      \r
-
-      const index = pm.environment.get(\"index\") || 0;\r
-
-      pm.environment.set(\"currentData\", JSON.stringify(data[index]));\r
-
-      pm.environment.set(\"index\", parseInt(index) + 1);\r
-
-      pm.environment.set(\"dataLength\", data.length);"
+    code: |
+      const data = [
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "exercise",
+          "description": "Saturday morning yoga session.",
+          "start_time": "2026-04-04T07:30:00.000Z",
+          "end_time": "2026-04-04T08:30:00.000Z",
+          "duration_minutes": 60,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 2 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "eating",
+          "description": "Brunch at a quiet local cafe.",
+          "start_time": "2026-04-04T10:00:00.000Z",
+          "end_time": "2026-04-04T11:00:00.000Z",
+          "duration_minutes": 60,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "hobby",
+          "description": "Watercolor painting in the park.",
+          "start_time": "2026-04-04T14:00:00.000Z",
+          "end_time": "2026-04-04T16:30:00.000Z",
+          "duration_minutes": 150,
+          "mood": { "happy": 5, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 2 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "social",
+          "description": "Met friends for a late afternoon coffee.",
+          "start_time": "2026-04-04T17:00:00.000Z",
+          "end_time": "2026-04-04T18:30:00.000Z",
+          "duration_minutes": 90,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 3 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "games",
+          "description": "Online multiplayer session with the squad.",
+          "start_time": "2026-04-04T20:00:00.000Z",
+          "end_time": "2026-04-04T22:00:00.000Z",
+          "duration_minutes": 120,
+          "mood": { "happy": 5, "sad": 1, "angry": 2, "fearful": 1, "disgusted": 1, "surprised": 4 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "rest",
+          "description": "Wind down and light reading before bed.",
+          "start_time": "2026-04-04T22:30:00.000Z",
+          "end_time": "2026-04-04T23:30:00.000Z",
+          "duration_minutes": 60,
+          "mood": { "happy": 3, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "rest",
+          "description": "Sunday morning lie-in and relaxation.",
+          "start_time": "2026-04-05T09:00:00.000Z",
+          "end_time": "2026-04-05T10:30:00.000Z",
+          "duration_minutes": 90,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "other",
+          "description": "Weekly grocery shopping and meal prep.",
+          "start_time": "2026-04-05T11:00:00.000Z",
+          "end_time": "2026-04-05T13:00:00.000Z",
+          "duration_minutes": 120,
+          "mood": { "happy": 2, "sad": 1, "angry": 2, "fearful": 1, "disgusted": 2, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "learn",
+          "description": "Studied advanced Mongoose schema patterns.",
+          "start_time": "2026-04-05T14:30:00.000Z",
+          "end_time": "2026-04-05T16:30:00.000Z",
+          "duration_minutes": 120,
+          "mood": { "happy": 3, "sad": 1, "angry": 1, "fearful": 2, "disgusted": 1, "surprised": 3 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "music",
+          "description": "Listened to new album releases while chilling.",
+          "start_time": "2026-04-05T17:00:00.000Z",
+          "end_time": "2026-04-05T18:00:00.000Z",
+          "duration_minutes": 60,
+          "mood": { "happy": 5, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 4 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "social",
+          "description": "Family dinner; slightly stressful but good food.",
+          "start_time": "2026-04-05T19:00:00.000Z",
+          "end_time": "2026-04-05T21:00:00.000Z",
+          "duration_minutes": 120,
+          "mood": { "happy": 3, "sad": 1, "angry": 3, "fearful": 2, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "rest",
+          "description": "Early night to prepare for the work week.",
+          "start_time": "2026-04-05T22:00:00.000Z",
+          "end_time": "2026-04-05T23:00:00.000Z",
+          "duration_minutes": 60,
+          "mood": { "happy": 2, "sad": 2, "angry": 1, "fearful": 2, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "work",
+          "description": "Monday morning standup and ticket grooming.",
+          "start_time": "2026-04-06T09:00:00.000Z",
+          "end_time": "2026-04-06T10:30:00.000Z",
+          "duration_minutes": 90,
+          "mood": { "happy": 2, "sad": 1, "angry": 1, "fearful": 4, "disgusted": 1, "surprised": 2 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "work",
+          "description": "Feature development - implementing the new API.",
+          "start_time": "2026-04-06T10:30:00.000Z",
+          "end_time": "2026-04-06T12:30:00.000Z",
+          "duration_minutes": 120,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "eating",
+          "description": "Quick lunch at the desk while debugging.",
+          "start_time": "2026-04-06T12:30:00.000Z",
+          "end_time": "2026-04-06T13:00:00.000Z",
+          "duration_minutes": 30,
+          "mood": { "happy": 1, "sad": 2, "angry": 3, "fearful": 1, "disgusted": 2, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "work",
+          "description": "Deep work session on the data pipeline.",
+          "start_time": "2026-04-06T13:00:00.000Z",
+          "end_time": "2026-04-06T17:00:00.000Z",
+          "duration_minutes": 240,
+          "mood": { "happy": 5, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "exercise",
+          "description": "Evening run to decompress from Monday stress.",
+          "start_time": "2026-04-06T18:00:00.000Z",
+          "end_time": "2026-04-06T19:00:00.000Z",
+          "duration_minutes": 60,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 2 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "rest",
+          "description": "Watching a documentary on Netflix.",
+          "start_time": "2026-04-06T20:30:00.000Z",
+          "end_time": "2026-04-06T22:30:00.000Z",
+          "duration_minutes": 120,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 3 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "exercise",
+          "description": "Morning gym session - Leg Day.",
+          "start_time": "2026-04-07T06:30:00.000Z",
+          "end_time": "2026-04-07T07:45:00.000Z",
+          "duration_minutes": 75,
+          "mood": { "happy": 3, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "work",
+          "description": "Code review and collaboration with the frontend team.",
+          "start_time": "2026-04-07T09:30:00.000Z",
+          "end_time": "2026-04-07T12:00:00.000Z",
+          "duration_minutes": 150,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 2 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "eating",
+          "description": "Team lunch out at a Japanese restaurant.",
+          "start_time": "2026-04-07T12:00:00.000Z",
+          "end_time": "2026-04-07T13:30:00.000Z",
+          "duration_minutes": 90,
+          "mood": { "happy": 5, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 3 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "work",
+          "description": "Solving a production bug related to timezones.",
+          "start_time": "2026-04-07T14:00:00.000Z",
+          "end_time": "2026-04-07T17:30:00.000Z",
+          "duration_minutes": 210,
+          "mood": { "happy": 3, "sad": 2, "angry": 4, "fearful": 3, "disgusted": 2, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "other",
+          "description": "Driving home through heavy rain and traffic.",
+          "start_time": "2026-04-07T17:45:00.000Z",
+          "end_time": "2026-04-07T19:00:00.000Z",
+          "duration_minutes": 75,
+          "mood": { "happy": 1, "sad": 2, "angry": 5, "fearful": 4, "disgusted": 3, "surprised": 1 }
+        },
+        {
+          "userId": "69d61e0a3cb0624fbdd34b2f",
+          "activity": "games",
+          "description": "Chill session of a cozy simulation game.",
+          "start_time": "2026-04-07T20:30:00.000Z",
+          "end_time": "2026-04-07T22:00:00.000Z",
+          "duration_minutes": 90,
+          "mood": { "happy": 4, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 1 }
+        }
+      ]
+
+      const index = pm.environment.get("index") || 0;
+      pm.environment.set("currentData", JSON.stringify(data[index]));
+      pm.environment.set("index", parseInt(index) + 1);
+      pm.environment.set("dataLength", data.length);
     language: text/javascript
   - type: afterResponse
-    code: "const data = JSON.parse(pm.environment.get(\"currentData\"));\r
+    code: |
+      const data = JSON.parse(pm.environment.get("currentData"));
+      const index = pm.environment.get("index");
 
-      const index = pm.environment.get(\"index\");\r
-
-      \r
-
-      if (index < pm.environment.get(\"dataLength\")) {\r
-
-      \    pm.execution.setNextRequest(\"create-sample-activities\");\r
-
-      } else {\r
-
-      \    pm.environment.set(\"index\", 0); // reset\r
-
-      \    pm.execution.setNextRequest(null);\r
-
-      }"
+      if (index < pm.environment.get("dataLength")) {
+          pm.execution.setNextRequest("create-sample-activities");
+      } else {
+          pm.environment.set("index", 0); // reset
+          pm.execution.setNextRequest(null);
+      }
     language: text/javascript
 order: 5000

@@ -4,31 +4,27 @@ url: "{{baseURL}}/api/v1/activities/{{recentActivityId}}"
 method: PUT
 body:
   type: json
-  content: "  {\r
-
-    \    \"activity\": \"Napping\",\r
-
-    \    \"description\": \"Accidental 2-hour nap\",\r
-
-    \    \"start_time\": \"{{activityStartTime}}\",\r
-
-    \    \"end_time\": \"{{activityEndTime}}\",\r
-
-    \    \"duration_minutes\": 120,\r
-
-    \    \"mood\": { \"happy\": 5, \"sad\": 1, \"angry\": 1, \"fearful\": 1, \"disgusted\": 1, \"surprised\": 2 }\r
-
-    \  }"
+  content: |
+    {
+      "activity": "Napping",
+      "description": "Accidental 2-hour nap",
+      "start_time": "{{activityStartTime}}",
+      "end_time": "{{activityEndTime}}",
+      "duration_minutes": 120,
+      "mood": { "happy": 5, "sad": 1, "angry": 1, "fearful": 1, "disgusted": 1, "surprised": 2 }
+    }
 auth:
   type: bearer
   credentials:
     token: "{{token}}"
 scripts:
   - type: beforeRequest
-    code: // console.log(pm.info.requestId)
+    code: |
+      // console.log(pm.info.requestId)
     language: text/javascript
   - type: afterResponse
-    code: pm.execution.setNextRequest("eBE27e888f4Abb19aDE261F8")
+    code: |
+      pm.execution.setNextRequest("eBE27e888f4Abb19aDE261F8")
     language: text/javascript
     requests:
       eBE27e888f4Abb19aDE261F8:

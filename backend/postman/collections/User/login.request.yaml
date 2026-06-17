@@ -3,35 +3,24 @@ url: "{{baseURL}}/api/v1/auth/login"
 method: POST
 body:
   type: json
-  content: "{\r
-
-    \    \"email\": \"{{testName}}@gmail.com\",\r
-
-    \    \"password\": \"000000\"\r
-
-    }\r\n"
+  content: |
+    {
+      "email": "{{testName}}@gmail.com",
+      "password": "000000"
+    }
 scripts:
   - type: afterResponse
-    code: "const res = pm.response.json();\r
+    code: |
+      const res = pm.response.json();
+      pm.environment.set("token", res.token);
 
-      pm.environment.set(\"token\", res.token);\r
+      pm.test("Response body is valid", function () {
+        var jsonData = pm.response.json();
+        console.log(pm.response)
+        pm.expect(jsonData.success).to.equal(true);
+        pm.expect(jsonData).to.have.property("token");
+      });
 
-      \r
-
-      pm.test(\"Response body is valid\", function () {\r
-
-      \    var jsonData = pm.response.json();\r
-
-      \    console.log(pm.response)\r
-
-      \    pm.expect(jsonData.success).to.equal(true);\r
-
-      \    pm.expect(jsonData).to.have.property(\"token\");\r
-
-      \r
-
-      });\r
-
-      pm.execution.setNextRequest(\"get-me\");"
+      pm.execution.setNextRequest("get-me");
     language: text/javascript
 order: 2869
